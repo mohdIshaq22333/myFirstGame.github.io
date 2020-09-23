@@ -1,0 +1,242 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: #d9d9d9;
+}
+body {
+  width: 100vw;
+  height: 100vh;
+  font-family: Roboto;
+  background: white;
+  align-items: center;
+  justify-items: center;
+}
+#container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 600px;
+  height: 100%;
+  max-height: 700px;
+  border: 4px solid black;
+  margin: 0 auto;
+  padding: 10px;
+  border-radius: 10px;
+  background-image: image("gameBackground");
+  /* background: #4f5758; #0D0D0D; that shining black */
+  /* background: linear-gradient(
+    to right,
+    rgba(30, 75, 115, 0.9),
+    rgba(0, 0, 0, 0.8)
+  ); */
+  background-blend-mode: multiply;
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  grid-template-rows: 3fr 2fr;
+  /* grid-template-areas:"gamepart scorebox"; */
+  /* left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%); */
+}
+.gamepart {
+  /* grid-area: gamepart; */
+  grid-row: 1/3;
+}
+.scorebox {
+  /* grid-area: scorebox; */
+  grid-row: 1/2;
+}
+
+#questionContainer {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.questionRealContainer {
+  height: 400px;
+}
+.answerButtons {
+  display: grid;
+  height: 100px;
+  margin: 70px 0 40px 0;
+  grid-template-areas:
+    "first second"
+    "third forth";
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+}
+.first {
+  grid-area: first;
+}
+.second {
+  grid-area: second;
+}
+.third {
+  grid-area: third;
+}
+.forth {
+  grid-area: forth;
+}
+option {
+  margin: 5px;
+  border: 2px solid black;
+}
+
+.hide {
+  display: none;
+}
+.red {
+  background: rgba(237, 63, 54, 0.8);
+}
+.green {
+  background-image: linear-gradient(to top, #0ba360 0%, #11ad7b 100%);
+}
+
+button {
+  box-shadow: 0 0 2px 0 white;
+  background: linear-gradient(
+    to right,
+    rgba(30, 75, 115, 0.4),
+    rgba(0, 0, 0, 0.4)
+  ); /* background-image: linear-gradient(to top, #4481eb 0%, #04befe 100%); */
+  color: white;
+  border-radius: 5px;
+}
+button:active {
+  /*check this */
+  box-shadow: 0 0 0 0;
+  color: black;
+}
+
+.question {
+  position: relative;
+  color: white;
+  font-size: x-large;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-weight: bolder;
+}
+.gameEnd {
+  width: 100%;
+}
+.test {
+  width: 100%;
+}
+.controls {
+  max-width: 200px;
+  max-height: 750px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-column-gap: 4px;
+}
+
+.scorebox {
+  max-height: 250px;
+  border: 2px solid black;
+  text-align: center;
+  margin: 0 10px;
+  background: #252526 → #3a6073;
+  border-radius: 10px;
+  box-shadow: 12px 4px 4px #000000, 6px -2px -2px #ececec;
+}
+.score {
+  margin: 10px 0 0 0;
+  font-weight: normal;
+}
+
+/* 
+ check how it is done. It has new things */
+
+.time {
+  height: 20px;
+  width: 30px;
+  border: 2px solid red;
+  background: black;
+}
+.sec::after {
+  content: ":";
+}
+.hearts {
+  display: flex;
+  margin: 0 10px;
+}
+.heart {
+  max-height: 35px;
+  max-width: 35px;
+  margin: 6px 8px;
+}
+
+/*demo watch
+
+
+ body{background-color: rgb(255, 255, 255);}
+ h1{
+  font-family: helvetica;
+  font-size:2.5rem ;
+  color:black;
+  position: relative;
+  top:80px;
+  z-index: -1;
+}
+#canvas {
+  display:block;
+  margin:5vh auto;
+  border-radius:50%;
+  box-shadow: 0 5px 14px black;
+} */
+
+#mycanvas {
+  /* background: #d9d9d9; */
+  border: 0.002px solid black;
+  border-radius: 50%;
+  position: relative;
+  width: 130px;
+  margin: 4px;
+}
+
+/* animation */
+
+#anime {
+  border: 1px solid black;
+  background-color: #f1f1f1;
+}
+#hid {
+  display: none;
+}
+@media (max-width: 500px) {
+  .questionRealContainer {
+    height: 360px;
+  }
+
+  #mycanvas {
+    width: 110px;
+  }
+  .scorebox {
+    width: 124px;
+    height: 250px;
+    border: 1px solid black;
+  }
+  .heart {
+    max-height: 22px;
+    max-width: 22px;
+    margin: 5px 5px;
+  }
+  .question {
+    font-size: 20px;
+    font-family: math;
+  }
+}
+@media (max-width: 700px) {
+  #container {
+    border-radius: 0px;
+  }
+}
