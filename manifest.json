@@ -1,0 +1,17 @@
+{
+  "name": "Test your brain",
+  "short_name": "Brain booster",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#2A3443",
+  "description": "Brain game with fun riddles and puzzles",
+  "theme_color": "#2A3443",
+  "icons": [
+    {
+      "src": "./images/Test-your-brain-big-icon.png",
+      "sizes": "1024x1024",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

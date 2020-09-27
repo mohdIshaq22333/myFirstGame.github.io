@@ -7,10 +7,22 @@
       name="viewport"
       content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
     />
+    <meta
+      name="description"
+      content="Brain game with fun riddles and puzzles"
+    />
+    <meta name="theme-color" content="#000000" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="full-screen" content="yes" />
     <meta name="screen-orientation" content="portrait" />
-    <title>Document</title>
+    <title>Test your brain</title>
+    <link
+      rel="icon"
+      type="image/png"
+      href="./images/Test-your-brain-big-icon.png"
+    />
+    <link rel="apple-touch-icon" href="./images/Test-your-brain-big-icon.png" />
+    <link rel="manifest" href="./manifest.json" />
     <link rel="stylesheet" href="css/theinterestingfact.css" />
     <link rel="stylesheet" href="css/backgroundAnimation.css" />
   </head>
@@ -104,6 +116,17 @@
     <canvas id="canvas" width="400" height="400"></canvas>
    </div> -->
 
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker
+            .register("./serviceworker.js")
+            .then((reg) => console.log("success", reg.scope))
+            .catch((err) => console.log("failureee", err));
+        });
+      }
+    </script>
+
     <script src="https://connect.facebook.net/en_US/fbinstant.6.3.js"></script>
     <script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
 
@@ -138,8 +161,11 @@
 <!-- you can merge feature... with master in github web  and then enter git pull for getting the changes into your file-->
 <!-- do git branch -d feature... to delete -->
 <!-- use git diff for seeing changes from other branches -->
-<!-- in case of merging when the master have some line and other some line that don't match so it will show on vs code do git merge master for manual merge -->
+<!-- in case of merging when the master have some line that don't match with feature branch so it will show on vs code do git merge master for manual merge -->
 <!-- can do commit -am "merging" a is for add if it is branch-->
 <!-- testing  -->
 <!-- testing can do commit -am "merging" a is for add if it is branch-->
-<!-- test -->
+<!-- for add undo do git reset (also be specific like readme.md) and for commit do git reset HEAD~1  -->
+<!-- for undo specific commit do git log and see your commits and copy the commit code that you want to undo then q then do git reset (code)  -->
+<!-- by above undo it will not remove the code from the file just be unsaved -->
+<!-- git reset -hard (code or #) for also removing code from file  -->
